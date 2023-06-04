@@ -1,0 +1,65 @@
+openapi: 3.0.0
+info:
+  title: Technical Test API for Inditex
+  description: |-
+    A simple API that allows one operation:
+    - get product applying price to given date
+  version: 1.0-SNAPSHOT
+servers:
+  - url: https://capitoleitxenvironment.org/api/v1
+tags:
+  - name: prices
+    description: Operations with prices
+paths:
+  /prices:
+    get:
+      tags:
+        - prices
+      summary: Get price information from date
+      description: Get price information using a given date
+      operationId: getPriceFromDate
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Price'
+        404:
+          description: Account not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PriceNotFoundError'
+components:
+  schemas:
+    Price:
+      type: object
+      properties:
+        product_id:
+          type: number
+          example: 55555
+        brand_id:
+          type: number
+          example: 1
+        pricelist_applying:
+          type: number
+          example: 1
+        startdate_applying:
+          type: string
+          format: date-time
+          example: '2022-07-09 00:00:00'
+        enddate_applying:
+          type: string
+          format: date-time
+          example: '2022-07-10 00:00:00'
+        price_applying:
+          type: number
+          format: float
+          example: 10.24
+    PriceNotFoundError:
+      type: object
+      properties:
+        message:
+          type: string
+          example: 'Error price not found'

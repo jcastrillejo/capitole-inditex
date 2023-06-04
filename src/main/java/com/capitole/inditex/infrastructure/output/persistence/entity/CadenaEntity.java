@@ -1,4 +1,4 @@
-package com.capitole.inditex.capitole.infrastructure.adapters.output.persistence.entity;
+package com.capitole.inditex.infrastructure.output.persistence.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.capitole.inditex.capitole;
+package com.capitole.inditex;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.capitole.inditex.capitole;
+package com.capitole.inditex;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
