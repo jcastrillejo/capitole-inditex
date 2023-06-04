@@ -18,6 +18,29 @@ paths:
       summary: Get price information from date
       description: Get price information using a given date
       operationId: getPriceFromDate
+      parameters:
+        - name: applying_date
+          in: query
+          description: 'Date which the price will apply'
+          required: true
+          schema:
+            type: string
+            format: date-time
+            example: '2019-04-05 00:00:00'
+        - name: product_id
+          in: query
+          description: 'Product identifier'
+          required: true
+          schema:
+            type: number
+            example: '9999'
+        - name: brand_id
+          in: query
+          description: 'Brand identifier'
+          required: true
+          schema:
+            type: number
+            example: '1'
       responses:
         200:
           description: Success
