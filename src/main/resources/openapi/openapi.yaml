@@ -6,7 +6,7 @@ info:
     - get product applying price to given date
   version: 1.0-SNAPSHOT
 servers:
-  - url: https://capitoleitxenvironment.org/api/v1
+  - url: http://localhost:8080/api/v1
 tags:
   - name: prices
     description: Operations with prices

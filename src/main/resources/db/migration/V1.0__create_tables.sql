@@ -1,7 +1,7 @@
-CREATE TABLE IF NOT EXISTS cadena (
+CREATE TABLE IF NOT EXISTS brand (
     brand_id INT,
-    cadena VARCHAR(255) NOT NULL,
-    CONSTRAINT "PK_CADENA" PRIMARY KEY (brand_id)
+    brand_name VARCHAR(255) NOT NULL,
+    CONSTRAINT "PK_BRAND" PRIMARY KEY (brand_id)
 );
 
 CREATE TABLE IF NOT EXISTS h_prices (
@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS h_prices (
     priority SMALLINT NOT NULL,
     price FLOAT NOT NULL,
     curr VARCHAR(3) NOT NULL,
-    CONSTRAINT "PK_CADENA_PRICES" PRIMARY KEY (price_list),
-    CONSTRAINT "FK_CADENA" FOREIGN KEY (brand_id) REFERENCES cadena (brand_id)
+    CONSTRAINT "PK_BRAND_PRICES" PRIMARY KEY (price_list),
+    CONSTRAINT "FK_BRAND" FOREIGN KEY (brand_id) REFERENCES brand (brand_id)
 );
