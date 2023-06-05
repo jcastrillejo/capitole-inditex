@@ -1,7 +1,6 @@
 package com.capitole.inditex.infrastructure.input.rest;
 
 import com.capitole.inditex.application.ports.input.PriceApplyingUseCase;
-import com.capitole.inditex.domain.model.HPrice;
 import com.capitole.inditex.infrastructure.input.rest.data.PriceDto;
 import com.capitole.inditex.infrastructure.input.rest.mapper.PricesRestAdapterMapper;
 import lombok.RequiredArgsConstructor;
