@@ -30,19 +30,19 @@ public class BrandEntity {
     this.hPrices = hPrices;
   }
 
-  public String getCadena() {
+  public String getBrandName() {
     return brandName;
   }
 
-  public void setCadena(String cadena) {
-    this.brandName = cadena;
+  public void setBrandName(String brandName) {
+    this.brandName = brandName;
   }
 
-  public Integer getId() {
+  public Integer getBrandId() {
     return brandId;
   }
 
-  public void setId(Integer id) {
-    this.brandId = id;
+  public void setBrandId(Integer brandId) {
+    this.brandId = brandId;
   }
 }

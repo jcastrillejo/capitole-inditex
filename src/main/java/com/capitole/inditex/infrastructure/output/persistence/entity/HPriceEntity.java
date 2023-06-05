@@ -20,7 +20,7 @@ public class HPriceEntity {
   @Column(name = "PRICE_LIST", nullable = false)
   private Integer hPricesId;
 
-  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "BRAND_ID", nullable = false)
   private BrandEntity brand;
 

@@ -8,8 +8,9 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.stereotype.Component;
 
+@Component
 @RequiredArgsConstructor
 public class HPricePersistenceAdapter implements HPriceOutputPort {
 
@@ -18,10 +19,10 @@ public class HPricePersistenceAdapter implements HPriceOutputPort {
 
   @Override
   public List<HPrice> getHPricesBy(
-      @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) OffsetDateTime applyingDate,
+      OffsetDateTime applyingDate,
       BigDecimal productId,
       BigDecimal brandId) {
-    return hPriceRepository.getHPricesEntityBy(applyingDate, productId, brandId).stream()
+    return hPriceRepository.getHPricesEntityBy(applyingDate.toInstant(), productId, brandId).stream()
         .map(hPricePersistenceMapper::toHPrice)
         .toList();
   }
