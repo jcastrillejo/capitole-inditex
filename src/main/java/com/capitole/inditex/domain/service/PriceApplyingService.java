@@ -5,7 +5,7 @@ import com.capitole.inditex.application.ports.output.HPriceOutputPort;
 import com.capitole.inditex.domain.exception.PriceNotFoundException;
 import com.capitole.inditex.domain.model.HPrice;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -18,7 +18,7 @@ public class PriceApplyingService implements PriceApplyingUseCase {
   private final HPriceOutputPort hPriceOutputPort;
 
   @Override
-  public HPrice getPriceApplying(OffsetDateTime applyingDate, BigDecimal productId,
+  public HPrice getPriceApplying(LocalDateTime applyingDate, BigDecimal productId,
       BigDecimal brandId) {
     List<HPrice> hPrices = hPriceOutputPort.getHPricesBy(applyingDate, productId, brandId);
     if(hPrices.isEmpty()) {

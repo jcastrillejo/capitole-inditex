@@ -175,6 +175,12 @@
 							<logToStderr>true</logToStderr>
 							<addCompileSourceRoot>true</addCompileSourceRoot>
 							<skip>${codegen.skip}</skip>
+							<typeMappings>
+								<typeMapping>OffsetDateTime=java.time.LocalDateTime</typeMapping>
+							</typeMappings>
+							<importMappings>
+								<importMapping>java.time.OffsetDateTime=java.time.LocalDateTime</importMapping>
+							</importMappings>
 							<configOptions>
 								<openApiValidate>3.0</openApiValidate>
 								<reactive>false</reactive>

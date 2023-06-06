@@ -8,9 +8,13 @@ import jakarta.persistence.Index;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
-import java.time.Instant;
+import java.time.LocalDateTime;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(
     name = "H_PRICES",
@@ -25,10 +29,10 @@ public class HPriceEntity {
   private BrandEntity brand;
 
   @Column(name = "START_DATE", nullable = false)
-  private Instant startDate;
+  private LocalDateTime startDate;
 
   @Column(name = "END_DATE", nullable = false)
-  private Instant endDate;
+  private LocalDateTime endDate;
 
   @Column(name = "PRODUCT_ID", nullable = false)
   private Integer productId;
@@ -74,19 +78,19 @@ public class HPriceEntity {
     this.productId = productId;
   }
 
-  public Instant getEndDate() {
+  public LocalDateTime getEndDate() {
     return endDate;
   }
 
-  public void setEndDate(Instant endDate) {
+  public void setEndDate(LocalDateTime endDate) {
     this.endDate = endDate;
   }
 
-  public Instant getStartDate() {
+  public LocalDateTime getStartDate() {
     return startDate;
   }
 
-  public void setStartDate(Instant startDate) {
+  public void setStartDate(LocalDateTime startDate) {
     this.startDate = startDate;
   }
 

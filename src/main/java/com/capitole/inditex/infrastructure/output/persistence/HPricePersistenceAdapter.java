@@ -5,7 +5,7 @@ import com.capitole.inditex.domain.model.HPrice;
 import com.capitole.inditex.infrastructure.output.persistence.mapper.HPricePersistenceMapper;
 import com.capitole.inditex.infrastructure.output.persistence.repository.HPriceRepository;
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -19,10 +19,10 @@ public class HPricePersistenceAdapter implements HPriceOutputPort {
 
   @Override
   public List<HPrice> getHPricesBy(
-      OffsetDateTime applyingDate,
+      LocalDateTime applyingDate,
       BigDecimal productId,
       BigDecimal brandId) {
-    return hPriceRepository.getHPricesEntityBy(applyingDate.toInstant(), productId, brandId).stream()
+    return hPriceRepository.getHPricesEntityBy(applyingDate, productId, brandId).stream()
         .map(hPricePersistenceMapper::toHPrice)
         .toList();
   }

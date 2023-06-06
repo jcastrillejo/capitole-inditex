@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,7 +19,7 @@ public class PricesRestAdapter implements PricesApi {
 
   @Override
   public ResponseEntity<PriceDto> _getPriceFromDate(
-      OffsetDateTime applyingDate, BigDecimal productId, BigDecimal brandId) {
+      LocalDateTime applyingDate, BigDecimal productId, BigDecimal brandId) {
     return ResponseEntity.ok()
         .body(
             pricesRestAdapterMapper.toPriceDto(

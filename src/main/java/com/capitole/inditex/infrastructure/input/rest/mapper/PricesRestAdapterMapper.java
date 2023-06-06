@@ -10,8 +10,8 @@ public interface PricesRestAdapterMapper {
 
   @Mapping(target = "pricelistApplying", source = "id")
   @Mapping(target = "brandId", source = "brand.brandId")
-  @Mapping(target = "startdateApplying", expression = "java(hPrice.getStartDate().atOffset(java.time.ZoneOffset.UTC))")
-  @Mapping(target = "enddateApplying", expression = "java(hPrice.getEndDate().atOffset(java.time.ZoneOffset.UTC))")
+  @Mapping(target = "startdateApplying", source = "startDate")
+  @Mapping(target = "enddateApplying", source = "endDate")
   @Mapping(target = "priceApplying", source = "price")
   PriceDto toPriceDto(HPrice hPrice);
 
